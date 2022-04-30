@@ -1,0 +1,1170 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"IGameModeJSON": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"gameModeTitle": {
+						"type": "string"
+					},
+					"gameModeCreatedAt": {
+						"type": "string"
+					},
+					"gameModeUpdatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"gameModeTitle",
+					"gameModeCreatedAt",
+					"gameModeUpdatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IResponse_Array_IGameModeJSON__": {
+				"properties": {
+					"message": {
+						"type": "string"
+					},
+					"data": {
+						"items": {
+							"$ref": "#/components/schemas/IGameModeJSON"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IResponseServerError": {
+				"properties": {
+					"message": {
+						"type": "string"
+					},
+					"error": {
+						"properties": {},
+						"additionalProperties": {
+							"type": "string"
+						},
+						"type": "object"
+					}
+				},
+				"required": [
+					"message",
+					"error"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IGameModeCreate": {
+				"properties": {
+					"gameModeTitle": {
+						"type": "string"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IResponse_IGameModeJSON_": {
+				"properties": {
+					"message": {
+						"type": "string"
+					},
+					"data": {
+						"$ref": "#/components/schemas/IGameModeJSON"
+					}
+				},
+				"required": [
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IResponseErrors": {
+				"properties": {
+					"message": {
+						"type": "string"
+					},
+					"errors": {
+						"items": {
+							"properties": {
+								"message": {
+									"type": "string"
+								},
+								"field": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"message",
+								"field"
+							],
+							"type": "object"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"message",
+					"errors"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IMap": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"mapTitle": {
+						"type": "string"
+					},
+					"mapTexturePath": {
+						"type": "string"
+					},
+					"mapCollisionTexturePath": {
+						"type": "string"
+					},
+					"mapCreatedAt": {
+						"type": "string"
+					},
+					"mapUpdatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"mapTitle",
+					"mapTexturePath",
+					"mapCollisionTexturePath",
+					"mapCreatedAt",
+					"mapUpdatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IGameMode": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"gameModeTitle": {
+						"type": "string"
+					},
+					"gameModeCreatedAt": {
+						"type": "string"
+					},
+					"gameModeUpdatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"gameModeTitle",
+					"gameModeCreatedAt",
+					"gameModeUpdatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IGameJSON": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"gameUser": {
+						"type": "string"
+					},
+					"gameMap": {
+						"$ref": "#/components/schemas/IMap"
+					},
+					"gameMode": {
+						"$ref": "#/components/schemas/IGameMode"
+					},
+					"gameStartDatetime": {
+						"type": "string"
+					},
+					"gameEndDatetime": {
+						"type": "string"
+					},
+					"gameOver": {
+						"type": "boolean"
+					},
+					"gameTimeLimit": {
+						"type": "number",
+						"format": "double"
+					},
+					"gameMaxPlayers": {
+						"type": "number",
+						"format": "double"
+					},
+					"gameCreatedAt": {
+						"type": "string"
+					},
+					"gameUpdatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"gameUser",
+					"gameMap",
+					"gameMode",
+					"gameStartDatetime",
+					"gameEndDatetime",
+					"gameOver",
+					"gameTimeLimit",
+					"gameMaxPlayers",
+					"gameCreatedAt",
+					"gameUpdatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IResponse_Array_IGameJSON__": {
+				"properties": {
+					"message": {
+						"type": "string"
+					},
+					"data": {
+						"items": {
+							"$ref": "#/components/schemas/IGameJSON"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IResponse_IGameJSON_": {
+				"properties": {
+					"message": {
+						"type": "string"
+					},
+					"data": {
+						"$ref": "#/components/schemas/IGameJSON"
+					}
+				},
+				"required": [
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IResponse": {
+				"properties": {
+					"message": {
+						"type": "string"
+					},
+					"data": {
+						"type": "number",
+						"enum": [
+							null
+						],
+						"nullable": true
+					}
+				},
+				"required": [
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IGameCreate": {
+				"properties": {
+					"gameUser": {
+						"type": "string"
+					},
+					"gameMap": {
+						"type": "string"
+					},
+					"gameMode": {
+						"type": "string"
+					},
+					"gameTimeLimit": {
+						"type": "number",
+						"format": "double"
+					},
+					"gameMaxPlayers": {
+						"type": "number",
+						"format": "double"
+					},
+					"gameStartDatetime": {
+						"type": "string"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IResponse_null_": {
+				"properties": {
+					"message": {
+						"type": "string"
+					},
+					"data": {
+						"type": "number",
+						"enum": [
+							null
+						],
+						"nullable": true
+					}
+				},
+				"required": [
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IGameUpdate": {
+				"properties": {
+					"gameStarted": {
+						"type": "boolean"
+					},
+					"gameOver": {
+						"type": "boolean"
+					}
+				},
+				"required": [
+					"gameStarted",
+					"gameOver"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IMapJSON": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"mapTitle": {
+						"type": "string"
+					},
+					"mapTexturePath": {
+						"type": "string"
+					},
+					"mapCollisionTexturePath": {
+						"type": "string"
+					},
+					"mapCreatedAt": {
+						"type": "string"
+					},
+					"mapUpdatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"mapTitle",
+					"mapTexturePath",
+					"mapCollisionTexturePath",
+					"mapCreatedAt",
+					"mapUpdatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IResponse_Array_IMapJSON__": {
+				"properties": {
+					"message": {
+						"type": "string"
+					},
+					"data": {
+						"items": {
+							"$ref": "#/components/schemas/IMapJSON"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IMapCreate": {
+				"properties": {
+					"mapTitle": {
+						"type": "string"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IResponse_IMapJSON_": {
+				"properties": {
+					"message": {
+						"type": "string"
+					},
+					"data": {
+						"$ref": "#/components/schemas/IMapJSON"
+					}
+				},
+				"required": [
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Pick_IUser.Exclude_keyofIUser.userPassword__": {
+				"properties": {
+					"userCreatedAt": {
+						"type": "string"
+					},
+					"userUpdatedAt": {
+						"type": "string"
+					},
+					"_id": {
+						"type": "string"
+					},
+					"userDisplayName": {
+						"type": "string"
+					},
+					"userRole": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"userCreatedAt",
+					"userUpdatedAt",
+					"_id",
+					"userDisplayName",
+					"userRole"
+				],
+				"type": "object",
+				"description": "From T, pick a set of properties whose keys are in the union K"
+			},
+			"IUserJSON": {
+				"properties": {
+					"userCreatedAt": {
+						"type": "string"
+					},
+					"userUpdatedAt": {
+						"type": "string"
+					},
+					"_id": {
+						"type": "string"
+					},
+					"userDisplayName": {
+						"type": "string"
+					},
+					"userRole": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"userCreatedAt",
+					"userUpdatedAt",
+					"_id",
+					"userDisplayName",
+					"userRole"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IResponse_IUserJSON_": {
+				"properties": {
+					"message": {
+						"type": "string"
+					},
+					"data": {
+						"$ref": "#/components/schemas/IUserJSON"
+					}
+				},
+				"required": [
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IUserLogin": {
+				"properties": {
+					"userDisplayName": {
+						"type": "string"
+					},
+					"userPassword": {
+						"type": "string"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IResponse__token-string.user-IUserJSON__": {
+				"properties": {
+					"message": {
+						"type": "string"
+					},
+					"data": {
+						"properties": {
+							"user": {
+								"$ref": "#/components/schemas/IUserJSON"
+							},
+							"token": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"user",
+							"token"
+						],
+						"type": "object"
+					}
+				},
+				"required": [
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IUserCreate": {
+				"properties": {
+					"userDisplayName": {
+						"type": "string"
+					},
+					"userPassword": {
+						"type": "string"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {
+			"api_key": {
+				"type": "apiKey",
+				"name": "access_token",
+				"in": "query"
+			}
+		}
+	},
+	"info": {
+		"title": "shooter-api",
+		"version": "1.0.0",
+		"license": {
+			"name": "ISC"
+		},
+		"contact": {}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/gamemodes": {
+			"get": {
+				"operationId": "GetGameModes",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponse_Array_IGameModeJSON__"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponseServerError"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{
+						"jwt": [
+							"user",
+							"admin"
+						]
+					}
+				],
+				"parameters": []
+			},
+			"post": {
+				"operationId": "PostGameMode",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					},
+					"201": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponse_IGameModeJSON_"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponseErrors"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponseServerError"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{
+						"jwt": [
+							"user",
+							"admin"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IGameModeCreate"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/games": {
+			"get": {
+				"operationId": "GetGameModes",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponse_Array_IGameJSON__"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponseServerError"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{
+						"jwt": []
+					}
+				],
+				"parameters": []
+			},
+			"post": {
+				"operationId": "PostGameMode",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					},
+					"201": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponse_null_"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponseErrors"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponseServerError"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{
+						"jwt": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IGameCreate"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/games/{gameId}": {
+			"get": {
+				"operationId": "GetGameById",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponse_IGameJSON_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponse"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponseServerError"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{
+						"jwt": []
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "gameId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"patch": {
+				"operationId": "UpdateMap",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponse_IGameJSON_"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponseErrors"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponse"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponseServerError"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{
+						"jwt": [
+							"admin"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "gameId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IGameUpdate"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeleteMap",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					},
+					"201": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponse"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponse"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponseServerError"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{
+						"jwt": [
+							"admin"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "gameId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/maps": {
+			"get": {
+				"operationId": "GetMaps",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponse_Array_IMapJSON__"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponseServerError"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{
+						"jwt": []
+					}
+				],
+				"parameters": []
+			},
+			"post": {
+				"operationId": "PostImage",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					},
+					"201": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponse_IMapJSON_"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponseErrors"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponseServerError"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{
+						"jwt": [
+							"admin"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IMapCreate"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/users/self": {
+			"get": {
+				"operationId": "UserGetSelf",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponse_IUserJSON_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponse"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{
+						"jwt": [
+							"admin",
+							"user"
+						]
+					}
+				],
+				"parameters": []
+			}
+		},
+		"/users/login": {
+			"post": {
+				"operationId": "UserLogin",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponse__token-string.user-IUserJSON__"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponseErrors"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IUserLogin"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/users/register": {
+			"post": {
+				"operationId": "UserRegister",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					},
+					"201": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponse_IUserJSON_"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponseErrors"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IResponseServerError"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IUserCreate"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}

@@ -1,0 +1,1 @@
+export type Omitt<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>

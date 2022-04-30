@@ -1,0 +1,19 @@
+// Override vue bootstrap variables
+@import 'variables.scss';
+
+$theme-colors: (
+  "primary":$game-blue-1,
+  "danger":$game-red,
+  "success": #63c76a,
+);
+
+a {
+  color: #4272d7;
+}
+.btn {
+  //font-size: 15px!important;
+
+  &.btn-success {
+    color: #FFF!important;
+  }
+}
